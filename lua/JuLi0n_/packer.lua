@@ -74,5 +74,18 @@ return require('packer').startup(function(use)
   use("eandrju/cellular-automaton.nvim")
   use("laytan/cloak.nvim")
 
+  use({
+	"Pocco81/auto-save.nvim",
+	config = function()
+		 require("auto-save").setup {
+			-- your config goes here
+			-- or just leave it empty :)
+		 }
+	end,
+    })
+              
+    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", 
+    setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, }) 
+
 end)
 
